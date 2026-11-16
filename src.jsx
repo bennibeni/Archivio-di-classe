@@ -10,7 +10,7 @@ const groups = {
 function load() {
   try { return JSON.parse(localStorage.getItem(storage)) ?? seed; } catch { return seed; }
 }
-function Source({ source, update }) {
+function Source({ source, update, remove }) {
   const [expanded, setExpanded] = useState(false);
   const [fact, setFact] = useState('');
   const detailsId = useId();
@@ -47,6 +47,14 @@ function Source({ source, update }) {
           }}><input aria-label="Informazione verificata" placeholder="Aggiungi un’informazione" value={fact} maxLength={350} onChange={e => setFact(e.target.value)} />
             <button>Aggiungi</button></form>
         </div>}
+        <div className="actions">
+          <button type="button" className="danger" onClick={() => {
+            const confirmed = window.confirm(
+              'Rimuovere «' + source.title + '» e le sue annotazioni da questa scheda?'
+            );
+            if (confirmed) remove();
+          }}>Rimuovi fonte</button>
+        </div>
       </td>
     </tr>
   </>;
@@ -188,8 +196,12 @@ function Profile({ person, change }) {
     {!matching.length && <p className="empty">Nessuna fonte in questa vista.</p>}
     {matching.length > 0 && <table className="sources-table" aria-label="Fonti web">
       <thead><tr><th scope="col">Fonte</th><th scope="col">Valutazione</th></tr></thead>
-      <tbody>{matching.map(source => <Source key={source.url} source={source} update={patch => updateSources(sources =>
-        sources.map(s => s.url === source.url ? { ...s, ...patch } : s))} />)}</tbody>
+      <tbody>{matching.map(source => <Source
+        key={source.url}
+        source={source}
+        update={patch => updateSources(sources => sources.map(s => s.url === source.url ? { ...s, ...patch } : s))}
+        remove={() => updateSources(sources => sources.filter(s => s.url !== source.url))}
+      />)}</tbody>
     </table>}
   </section>;
 }
