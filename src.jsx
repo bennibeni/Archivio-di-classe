@@ -149,7 +149,10 @@ function Profile({ person, change }) {
     <div className="search"><h3>Cerca nuove fonti</h3><p>Usa il nome del compagno e, se serve, aggiungi un dettaglio per distinguere gli omonimi.</p>
       <form className="row" onSubmit={search}><input aria-label="Parole chiave facoltative" placeholder="Es. città, scuola, professione" maxLength={150} value={keywords} onChange={e => setKeywords(e.target.value)} />
         <button className="primary" disabled={busy}>{busy ? 'Ricerca…' : 'Cerca sul web'}</button></form>
-      <a className="manual" href={'https://www.google.com/search?q=' + encodeURIComponent('"' + person.name + '" ' + keywords)} rel="noreferrer" target="_blank">Apri ricerca su Google ↗</a>
+      <div className="search-links">
+        <a className="manual" href={'https://www.google.com/search?q=' + encodeURIComponent('"' + person.name + '" ' + keywords)} rel="noreferrer" target="_blank">Apri ricerca su Google ↗</a>
+        <a className="manual" href="https://api-dashboard.search.brave.com/app/dashboard" rel="noreferrer" target="_blank">Controlla credito Brave ↗</a>
+      </div>
       <details><summary>Aggiungi un link</summary><form className="row import" onSubmit={e => {
         e.preventDefault();
         const data = new FormData(e.currentTarget);
