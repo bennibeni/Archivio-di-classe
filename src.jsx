@@ -161,7 +161,8 @@ function App() {
     </main>
     <footer className="projects-footer">
       <a href="https://links-page-bennibeni.vercel.app/">← ALL LINKS</a>
-      <a href="/statica.html">Copia statica</a>
+      <a href="/classe-1979.html">Classe V C 1979</a>
+      {import.meta.env.DEV && <a href="/privato/classe-1979.html">Versione completa (solo in locale)</a>}
       <span>Archivio di classe</span>
     </footer>
   </>;

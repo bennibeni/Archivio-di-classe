@@ -79,16 +79,3 @@
 .file-button:hover { border-color: #526b5b; }
 .file-button:focus-within { outline: 2px solid #42735b; outline-offset: 3px; }
 .file-button input { position: absolute; inset: 0; opacity: 0; width: 100%; cursor: pointer; padding: 0; border: 0; }
-
-/* Pagina statica (statica.html) */
-.static-list { display: grid; gap: 18px; }
-.static-card { scroll-margin-top: 16px; }
-.static-link { padding: 8px 11px; border: 1px solid #bfc9bf; border-radius: 8px; background: #fff; text-decoration: none; font-size: .87rem; font-weight: 650; color: inherit; }
-.static-link:hover { border-color: #526b5b; text-decoration: none; }
-.static-sources { list-style: none; padding: 0; margin: 18px 0 0; border: 1px solid var(--border); border-radius: 12px; }
-.static-sources > li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 12px; overflow-wrap: anywhere; }
-.static-sources > li + li { border-top: 1px solid var(--border); }
-.static-sources a { font-weight: 650; }
-.static-sources .domain { display: block; margin-top: 3px; }
-.static-facts { margin: 8px 0 0; padding-left: 18px; font-size: .88rem; color: var(--muted); }
-.static-link:focus-visible { outline: 2px solid #42735b; outline-offset: 3px; }

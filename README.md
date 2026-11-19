@@ -23,6 +23,10 @@ Per archiviare una fonte, apri la pagina originale e inserisci il suo indirizzo 
 
 Senza chiave, usa Apri ricerca su Google. Le versioni precedenti salvavano anche i risultati automatici e non indicavano la provenienza delle singole fonti.
 
-## Copia statica
+## Pagina privata della classe
 
-La pagina /statica.html mostra in sola lettura l'archivio esportato in data/archivio-di-classe-2026-11-19.json. Non usa il salvataggio del browser, quindi online mostra sempre gli stessi dati. Per aggiornarla, esporta l'archivio, metti il nuovo file in data/ e aggiorna l'import in statica.jsx.
+La pagina privato/classe-1979.html contiene dati personali (recapiti, indirizzi, date di nascita). La cartella privato/ è esclusa da git, quindi la pagina non arriva su GitHub né su Vercel. Si apre solo in locale con npm run dev, all'indirizzo http://127.0.0.1:5188/privato/classe-1979.html, oppure con il link nel piè di pagina dell'app (visibile solo in locale).
+
+## Pagina pubblica della classe
+
+La pagina public/classe-1979.html è la copia pubblicabile, senza recapiti, indirizzi, date di nascita e senza i profili da confermare. Va online con l'app all'indirizzo /classe-1979.html. Se aggiorni la versione privata, rigenera anche questa senza dati personali.

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Archivio Classe V Sez. C (1979) - Liceo Scientifico "G. Rummo" Benevento</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1020px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+        }
+        h1 {
+            color: #1e3a8a;
+            font-size: 1.75rem;
+            margin: 0 0 8px 0;
+        }
+        .subtitle {
+            color: #4b5563;
+            font-size: 1rem;
+            margin: 0;
+        }
+        h2 {
+            color: #1e40af;
+            font-size: 1.25rem;
+            margin-top: 32px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .badge {
+            background-color: #dbeafe;
+            color: #1e40af;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 9999px;
+        }
+        .badge-pending {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .badge-memorial {
+            background-color: #e0e7ff;
+            color: #3730a3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 0.93rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 13px 15px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f8fafc;
+            color: #374151;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+        }
+        tr:hover {
+            background-color: #f9fafb;
+        }
+        tr.promoter-row {
+            background-color: #eff6ff;
+        }
+        tr.promoter-row:hover {
+            background-color: #dbeafe;
+        }
+        .person-name {
+            font-weight: 700;
+            color: #111827;
+            font-size: 1rem;
+        }
+        .tag-promoter {
+            display: inline-block;
+            margin-top: 4px;
+            padding: 2px 7px;
+            background-color: #1d4ed8;
+            color: #ffffff;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .sub-info {
+            display: block;
+            font-size: 0.84rem;
+            color: #4b5563;
+            margin-top: 3px;
+        }
+        .dates-pill {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 2px 8px;
+            background-color: #f3f4f6;
+            color: #374151;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .link-list {
+            margin: 6px 0 0 0;
+            padding-left: 18px;
+        }
+        .link-list li {
+            margin-bottom: 4px;
+        }
+        .memorial-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid #4f46e5;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+        .memorial-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            gap: 8px;
+        }
+        .memorial-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e1b4b;
+        }
+        .memorial-dates {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4338ca;
+            background-color: #eef2ff;
+            padding: 3px 10px;
+            border-radius: 9999px;
+        }
+        .memorial-quote {
+            font-style: italic;
+            color: #4b5563;
+            background-color: #ffffff;
+            border-left: 3px solid #c7d2fe;
+            padding: 10px 14px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9rem;
+        }
+        .notes-box {
+            background-color: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: #374151;
+        }
+        footer {
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.8rem;
+            color: #6b7280;
+            text-align: center;
+        }
+        @media print {
+            body { background: #ffffff; padding: 0; }
+            .container { box-shadow: none; padding: 0; }
+            a { color: #000000; text-decoration: underline; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Archivio Classe V Sez. C – Maturità 1979</h1>
+            <p class="subtitle">Liceo Scientifico Statale "Gaetano Rummo" di Benevento · Elenco ex compagni, docenti e memoria storica</p>
+        </header>
+
+        <h2>Compagni di classe confermati <span class="badge">9 nominativi</span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 24%;">Nome e Cognome</th>
+                    <th style="width: 30%;">Professione / Ruolo attuale</th>
+                    <th style="width: 20%;">Città / Ente</th>
+                    <th style="width: 26%;">Riferimenti pubblici</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="promoter-row">
+                    <td>
+                        <span class="person-name">Dott. Benedetto Cattarinich</span><br>
+                        <span class="tag-promoter">Promotore ricerca</span>
+                    </td>
+                    <td>
+                        <strong>Programmatore di computer</strong><br>
+                        <span class="sub-info">Laureato in Matematica · Giocatore di scacchi (ID FIDE: 23438487)</span>
+                    </td>
+                    <td>Roma</td>
+                    <td>
+                        <a href="https://ratings.fide.com/calculations.phtml?id_number=23438487&period=2024-04-01&rating=0" target="_blank" rel="noopener noreferrer">Scheda giocatore FIDE</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="person-name">Michele Orsillo</span>
+                    </td>
+                    <td>Settore Costruzioni, Energetico, Ricerca &amp; Sviluppo</td>
+                    <td>Benevento<span class="sub-info">Provincia di Benevento</span></td>
+                    <td>
+                        <a href="https://www.linkedin.com/in/michele-orsillo-0999841a6/" target="_blank" rel="noopener noreferrer">Profilo LinkedIn</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="person-name">Dott.ssa Elena Fossi</span>
+                    </td>
+                    <td>Dirigente Medico (Coordinatore Screening e Monitoraggio NSG)</td>
+                    <td>Benevento<span class="sub-info">ASL Benevento</span></td>
+                    <td>
+                        <a href="https://www.aslbenevento.it/persona/dottssa-elena-fossi" target="_blank" rel="noopener noreferrer">Scheda ASL Benevento</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="person-name">Dott. Carmine Santamaria</span>
+                    </td>
+                    <td>Medico Chirurgo Specialista in Oculistica</td>
+                    <td>Benevento</td>
+                    <td>
+                        <a href="https://www.dottcarminesantamariaoculista.it/" target="_blank" rel="noopener noreferrer">Sito ufficiale</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="person-name">Arch. Pellegrino Soriano</span>
+                    </td>
+                    <td>Architetto (già Presidente Ordine Architetti BN)</td>
+                    <td>Benevento</td>
+                    <td>
+                        <a href="https://www.unisannio.it/sites/default/files/sito/ateneo/incarichi/curriculum/cv_soriano.pdf" target="_blank" rel="noopener noreferrer">CV Unisannio</a> · 
+                        <a href="https://www.paginegialle.it/benevento-bn/architetto/soriano-pellegrino_7" target="_blank" rel="noopener noreferrer">PagineGialle</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="person-name">Ing. Achille Timossi</span>
+                    </td>
+                    <td>Ingegnere, Funzionario / RUP (Settore Lavori Pubblici)</td>
+                    <td>Benevento<span class="sub-info">Comune di Benevento</span></td>
+                    <td>
+                        <a href="https://web.comune.benevento.it/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GTkRrM5kEYz0-F" target="_blank" rel="noopener noreferrer">Atti Comune di Benevento</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="person-name">Dott. Tullio Simeone</span>
+                    </td>
+                    <td>Dottore Commercialista e Revisore Contabile</td>
+                    <td>Cremona</td>
+                    <td>
+                        <a href="https://www.odcec.cr.it/albo/" target="_blank" rel="noopener noreferrer">Albo ODCEC Cremona</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="person-name">Dott. Giancarlo Portoghese</span>
+                    </td>
+                    <td>Dirigente Medico (Impianti radiologici)</td>
+                    <td>Benevento<span class="sub-info">ASL Benevento</span></td>
+                    <td>
+                        <a href="https://www.facebook.com/giancarlo.portoghese/" target="_blank" rel="noopener noreferrer">Profilo Facebook</a> · 
+                        <a href="https://it.linkedin.com/in/giancarlo-portoghese-67a88a5a" target="_blank" rel="noopener noreferrer">Profilo LinkedIn</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="person-name">Prof. Giovanni Rossetti</span>
+                    </td>
+                    <td>
+                        <strong>Docente di Filosofia e Scienze Umane</strong> (Ph.D. in Filosofia e Politica, Univ. "L'Orientale" di Napoli)<br>
+                        <span class="sub-info">Scacchista Candidato Maestro (CM) · ID FIDE: 883921</span>
+                    </td>
+                    <td>Benevento<span class="sub-info">Liceo "G. Guacci"</span></td>
+                    <td>
+                        <a href="https://www.facebook.com/gioross/" target="_blank" rel="noopener noreferrer">Profilo Facebook</a> · 
+                        <a href="https://www.mimesisedizioni.it/catalogo/autore/4158/giovanni-rossetti" target="_blank" rel="noopener noreferrer">Pubblicazioni Mimesis</a><br>
+                        <a href="https://www.365chess.com/players/Giovanni_Rossetti" target="_blank" rel="noopener noreferrer">Scheda FIDE/365Chess</a> · 
+                        <a href="https://www.federscacchi.com/fsi/index.php/struttura/tesserati?codice=4072&anno=2026" target="_blank" rel="noopener noreferrer">Elenco FSI</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Corpo Docente confermato <span class="badge">1 docente</span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 26%;">Docente</th>
+                    <th style="width: 22%;">Materia</th>
+                    <th style="width: 52%;">Informazioni biografiche e testimonianze</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="person-name">Prof.ssa Marisa De Luca</span>
+                        <span class="sub-info">(coniugata Facchiano)</span>
+                        <span class="dates-pill">29 maggio 1945 – 29 dicembre 2021</span>
+                    </td>
+                    <td>
+                        <strong>Italiano e Latino</strong><br>
+                        <span class="sub-info">Liceo Scientifico "G. Rummo"</span>
+                    </td>
+                    <td>
+                        Docente di lettere al Liceo Scientifico "G. Rummo" di Benevento, ricordata per l'attenzione e il sostegno alla sensibilità letteraria dei propri studenti. Scomparsa il 29 dicembre 2021 all'età di 76 anni. Ha curato insieme al figlio dell'autrice la raccolta poetica postuma della sua ex studentessa Costanza Damiana Possemato.
+                        <ul class="link-list">
+                            <li>
+                                <a href="https://www.youtube.com/watch?v=UbMS83SZC80" target="_blank" rel="noopener noreferrer">Intervista video: "Marisa De Luca – Questione femminile" (YouTube)</a> — Riprese del 2019 a Benevento, pubblicata il 4 gennaio 2022 da Associazione Orbisophia.
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/watch?v=9gK6Ytw2lyA" target="_blank" rel="noopener noreferrer">ENNIO CAVUOTO - in ricordo di Costanza Damiana Possemato (pubblicato nel 2018)</a> — Video dedicato alla sua ex studentessa del Liceo Scientifico di Benevento, con cui mantenne un profondo legame d'amicizia e ne incoraggiò la vocazione poetica.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Sezione Commemorativa <span class="badge badge-memorial">In ricordo</span></h2>
+        <div class="memorial-card">
+            <div class="memorial-header">
+                <span class="memorial-title">Costanza Damiana Possemato</span>
+                <span class="memorial-dates">San Paolo di Civitate (FG), 14 luglio 1961 – 4 aprile 1989</span>
+            </div>
+            <p style="margin: 0 0 10px 0; font-size: 0.94rem;">
+                Trasferitasi con la famiglia a Benevento dopo l'infanzia in Puglia, ha frequentato il <strong>Liceo Scientifico "G. Rummo"</strong> nella stessa generazione scolastica (classe 1961), seguendo le lezioni di italiano della <strong>Prof.ssa Marisa De Luca</strong>, con la quale nacque un intenso e duraturo legame d'amicizia. Madre di Ennio Cavuoto (nato nel 1981), è scomparsa prematuramente il <strong>4 aprile 1989</strong> all'età di 27 anni.
+            </p>
+            <div class="memorial-quote">
+                «Altre attività: scrivere e pensare anche quando sarebbe meglio sospendere la mente. Costante della mia vita: il dolore della morte al mio fianco, la solitudine dell'incomprensione.»
+                <br><span style="font-style: normal; font-size: 0.82rem; color: #6b7280;">— Autopresentazione per un concorso letterario (1986)</span>
+            </div>
+            <p style="margin: 8px 0 6px 0; font-size: 0.92rem;">
+                Nel 2017 la sua intera produzione poetica (scritta dalla metà degli anni Settanta al 1989) è stata raccolta nel volume postumo <strong><em>"Niente, più di questo, mi definisce"</em></strong> (Aracne Editrice), curato dal figlio Ennio Cavuoto insieme alla stessa Prof.ssa Marisa De Luca, a Daniela Pastore e a Carmela Possemato.
+            </p>
+            <ul class="link-list" style="font-size: 0.9rem;">
+                <li>
+                    <a href="https://www.aracne-editrice.it/index.php/pubblicazione.html?item=9788825502923" target="_blank" rel="noopener noreferrer">Scheda del libro "Niente, più di questo, mi definisce" (Aracne Editrice)</a> · 
+                    <a href="https://www.aracne-editrice.it/pdf/9788825502923.pdf" target="_blank" rel="noopener noreferrer">Estratto PDF con prefazione di Marisa De Luca</a>
+                </li>
+                <li>
+                    <a href="https://www.fondazioneromano.it/2018/03/14/presentazione-niente-piu-di-questo-mi-definisce-possemato/" target="_blank" rel="noopener noreferrer">Presentazione commemorativa a Benevento (Fondazione Romano, marzo 2018)</a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=9gK6Ytw2lyA" target="_blank" rel="noopener noreferrer">ENNIO CAVUOTO - in ricordo di Costanza Damiana Possemato (YouTube, 2018)</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="notes-box">
+            <strong>Note sulle altre ricerche effettuate:</strong>
+            <ul class="link-list" style="margin-top: 6px;">
+                <li><strong>Compagni ancora da ritrovare:</strong> <em>Vincenzo Vitale</em>, <em>Massimo Ranaudo</em>, <em>Mazzitelli (Michele/Marcello)</em>, <em>Rosanna Miele</em>, <em>Aniello Dellaperuta</em>, <em>Ada Troisi</em>, <em>Carmela Basile</em>, <em>Maria Rosaria Basilicata</em>, <em>Anna De Stasio</em>, <em>Antonio Iasiello</em>, <em>Nicola Tranfaglia</em>, <em>Eufemia</em>.</li>
+                <li><strong>Docenti:</strong> <em>Prof.ssa Elena Ruggi</em> (Storia e Filosofia) e <em>Prof. Giovanni Miele</em> (Matematica e Fisica) — nessun archivio digitale pubblico individuato per gli anni '70.</li>
+            </ul>
+        </div>
+
+        <footer>
+            Archivio della Classe V Sez. C (1979) · Liceo Scientifico "G. Rummo", Benevento · Aggiornato a novembre 2026 · <a href="/">Archivio di classe</a>
+        </footer>
+    </div>
+</body>
+</html>
