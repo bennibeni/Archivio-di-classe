@@ -69,3 +69,13 @@
   flex-wrap: wrap;
   column-gap: 16px;
 }
+
+/* Backup: esportazione e importazione */
+.transfer { display: grid; gap: 8px; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; }
+.transfer h3 { font-size: .85rem; }
+.transfer p { font-size: .8rem; margin: 0; }
+.transfer .notice { margin-top: 0; font-size: .8rem; color: var(--muted); }
+.file-button { position: relative; display: block; text-align: center; font-size: .87rem; font-weight: 650; padding: 8px 11px; border: 1px solid #bfc9bf; border-radius: 8px; background: #fff; cursor: pointer; }
+.file-button:hover { border-color: #526b5b; }
+.file-button:focus-within { outline: 2px solid #42735b; outline-offset: 3px; }
+.file-button input { position: absolute; inset: 0; opacity: 0; width: 100%; cursor: pointer; padding: 0; border: 0; }

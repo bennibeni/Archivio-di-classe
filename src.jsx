@@ -10,6 +10,40 @@ const groups = {
 function load() {
   try { return JSON.parse(localStorage.getItem(storage)) ?? seed; } catch { return seed; }
 }
+const backupFormat = 'archivio-di-classe';
+function exportArchive(people) {
+  const payload = { format: backupFormat, version: 1, exportedAt: new Date().toISOString(), people };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'archivio-di-classe-' + new Date().toISOString().slice(0, 10) + '.json';
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+}
+// Accetta solo dati con la struttura dell'archivio; restituisce null se il file non è valido.
+function parseArchive(text) {
+  let data;
+  try { data = JSON.parse(text); } catch { return null; }
+  const list = Array.isArray(data) ? data : data?.format === backupFormat ? data.people : null;
+  if (!Array.isArray(list)) return null;
+  const isText = (v, max) => typeof v === 'string' && v.trim() !== '' && v.length <= max;
+  const ids = new Set();
+  const people = [];
+  for (const p of list) {
+    if (!p || !isText(p.id, 100) || !isText(p.name, 100) || !Array.isArray(p.sources) || ids.has(p.id)) return null;
+    ids.add(p.id);
+    const sources = [];
+    for (const s of p.sources) {
+      if (!s || typeof s.url !== 'string' || !linkKey(s.url) || !(s.status in labels)) return null;
+      const facts = Array.isArray(s.facts) ? s.facts.filter(f => typeof f === 'string' && f.trim()).map(f => f.slice(0, 350)) : [];
+      sources.push({ url: s.url.trim(), title: isText(s.title, 300) ? s.title.trim() : new URL(s.url).hostname, status: s.status, facts });
+    }
+    people.push({ id: p.id, name: p.name.trim(), sources });
+  }
+  return people;
+}
 function Source({ source, update, remove }) {
   const [expanded, setExpanded] = useState(false);
   const [fact, setFact] = useState('');
@@ -72,7 +106,22 @@ function App() {
       return next;
     });
   }
+  const [transferNotice, setTransferNotice] = useState('');
   function select(id) { setActive(id); }
+  async function importArchive(e) {
+    const input = e.currentTarget;
+    const file = input.files?.[0];
+    input.value = '';
+    if (!file) return;
+    if (file.size > 5_000_000) return setTransferNotice('Il file è troppo grande.');
+    const imported = parseArchive(await file.text());
+    if (!imported) return setTransferNotice('Il file non è un archivio valido.');
+    const count = imported.length === 1 ? '1 compagno' : imported.length + ' compagni';
+    if (!window.confirm('Sostituire l’archivio di questo browser con ' + count + ' dal file «' + file.name + '»? Le schede attuali verranno sovrascritte.')) return;
+    change(() => imported);
+    setActive(imported[0]?.id);
+    setTransferNotice('Archivio importato: ' + count + '.');
+  }
   function add(e) {
     e.preventDefault();
     const name = new FormData(e.currentTarget).get('name').trim().replace(/\s+/g, ' ');
@@ -99,6 +148,13 @@ function App() {
             <span className="initials">{p.name.split(/\s+/).slice(0, 2).map(word => word[0]).join('')}</span>{p.name}</button>)}</nav>
           <form className="add" onSubmit={add}><label htmlFor="new-name">Nuovo compagno</label>
             <input id="new-name" name="name" maxLength={100} required placeholder="Nome e cognome" /><button>+ Aggiungi</button></form>
+          <div className="transfer"><h3>Backup</h3>
+            <p>Salva l’archivio in un file e caricalo in un altro browser o indirizzo.</p>
+            <button type="button" onClick={() => { exportArchive(people); setTransferNotice('File esportato.'); }}>Esporta archivio</button>
+            <label className="file-button">Importa archivio
+              <input type="file" accept="application/json,.json" onChange={importArchive} /></label>
+            <div role="status" className="notice">{transferNotice}</div>
+          </div>
         </aside>
         {person && <Profile key={person.id} {...{ person, change }} />}
       </div>
