@@ -1,4 +1,5 @@
 import { defineConfig, loadEnv } from 'vite';
+import { resolve } from 'node:path';
 
 export default defineConfig(({ mode }) => {
   const key = loadEnv(mode, process.cwd(), 'BRAVE_').BRAVE_SEARCH_API_KEY?.trim();
@@ -26,5 +27,8 @@ export default defineConfig(({ mode }) => {
       }
     });
   };
-  return { plugins: [{ name: 'ricerca-web-locale', configureServer: configure, configurePreviewServer: configure }] };
+  return {
+    plugins: [{ name: 'ricerca-web-locale', configureServer: configure, configurePreviewServer: configure }],
+    build: { rollupOptions: { input: { main: resolve(import.meta.dirname, 'index.html'), statica: resolve(import.meta.dirname, 'statica.html') } } },
+  };
 });

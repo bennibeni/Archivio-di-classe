@@ -1,0 +1,79 @@
+{
+  "format": "archivio-di-classe",
+  "version": 1,
+  "exportedAt": "2026-11-19T09:22:45.061Z",
+  "people": [
+    {
+      "id": "michele-orsillo",
+      "name": "Michele Orsillo",
+      "sources": [
+        {
+          "title": "Profilo LinkedIn",
+          "url": "https://it.linkedin.com/in/michele-orsillo-0999841a6",
+          "status": "certain",
+          "facts": []
+        },
+        {
+          "title": "Provincia di Benevento · Determina n. 366/2026",
+          "url": "https://www.provincia.benevento.it/node/59856",
+          "status": "certain",
+          "facts": []
+        },
+        {
+          "title": "Provincia di Benevento · Determina n. 995/2026",
+          "url": "https://www.provincia.benevento.it/node/60805",
+          "status": "certain",
+          "facts": []
+        },
+        {
+          "url": "https://www.provincia.benevento.it/node/38703",
+          "title": "Provincia di Benevento",
+          "status": "uncertain",
+          "facts": []
+        },
+        {
+          "url": "https://www.ilquaderno.it/ordine-degli-architetti-presidente-%c3%a8-michele-orsillo-87038.html",
+          "title": "ilquaderno.it",
+          "status": "certain",
+          "facts": []
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=rhPiydukHpM",
+          "title": "youtube",
+          "status": "certain",
+          "facts": []
+        }
+      ]
+    },
+    {
+      "id": "eb0700be-6763-422f-b605-a8928874e6bc",
+      "name": "Elena Fossi",
+      "sources": [
+        {
+          "url": "https://www.aslbenevento.it/persona/dottssa-elena-fossi",
+          "title": "ASL Benevento",
+          "status": "certain",
+          "facts": []
+        },
+        {
+          "url": "https://www.facebook.com/reel/1868694977786841",
+          "title": "Facebook",
+          "status": "certain",
+          "facts": []
+        }
+      ]
+    },
+    {
+      "id": "141ea95b-b852-4481-8acb-adaf44722182",
+      "name": "Carmine Santamaria",
+      "sources": [
+        {
+          "url": "https://www.dottcarminesantamariaoculista.it/",
+          "title": "Website",
+          "status": "certain",
+          "facts": []
+        }
+      ]
+    }
+  ]
+}

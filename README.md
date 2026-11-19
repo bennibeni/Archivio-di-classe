@@ -22,3 +22,7 @@ Le proposte di Brave restano in memoria. Si cancellano quando chiudi i risultati
 Per archiviare una fonte, apri la pagina originale e inserisci il suo indirizzo con Aggiungi un link. Ogni nuova fonte entra in Da valutare. Dopo aver scelto Certa, puoi annotare le informazioni che hai verificato. Le fonti archiviate come Errata restano escluse dalle ricerche successive.
 
 Senza chiave, usa Apri ricerca su Google. Le versioni precedenti salvavano anche i risultati automatici e non indicavano la provenienza delle singole fonti.
+
+## Copia statica
+
+La pagina /statica.html mostra in sola lettura l'archivio esportato in data/archivio-di-classe-2026-11-19.json. Non usa il salvataggio del browser, quindi online mostra sempre gli stessi dati. Per aggiornarla, esporta l'archivio, metti il nuovo file in data/ e aggiorna l'import in statica.jsx.
